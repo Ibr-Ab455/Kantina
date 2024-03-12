@@ -22,7 +22,7 @@ function Register() {
   const handleSubmit = async (e) => {
    e.preventDefault();
 
-   if(!formDate.fullname || !formDate.email || !formDate.password){
+   if(!formDate.username || !formDate.email || !formDate.password){
     return setErrorMessage('er ikke gyldig');
    }
 
@@ -44,9 +44,11 @@ function Register() {
       navigate("/login")
     }
    } 
-   catch (error) {
-    console.log(error)
-   }
+   catch (error)  {
+    console.log(error);
+   } 
+    
+   
   }
 
   return (
@@ -65,8 +67,8 @@ function Register() {
         <div>
             <form className='space-y-6' onSubmit={handleSubmit}>
                 <div className='flex flex-col space-y-2'>
-                    <label className='text-xl text-white'>Navn</label>
-                    <input type='text' placeholder='' id='fullname' className='w-[170%] p-2 rounded-[15px] outline  border-2 border-gray-500 text-white bg-black' onChange={handleChange}/>
+                    <label className='text-xl text-white'>brukernavn</label>
+                    <input type='text' placeholder='' id='username' className='w-[170%] p-2 rounded-[15px] outline  border-2 border-gray-500 text-white bg-black' onChange={handleChange}/>
                 </div>
 
                 <div className='flex flex-col space-y-2'>

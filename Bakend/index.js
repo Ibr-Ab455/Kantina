@@ -2,6 +2,7 @@ import express from 'express';
 import mongose from 'mongoose';
 import dotenv from 'dotenv';
 import authRouter from './router/auth.router.js'
+import userRouter from './router/user.router.js'
 import cookieParser from 'cookie-parser';
 
 dotenv.config();
@@ -20,6 +21,7 @@ app.use(cookieParser());
 
 
 app.use('/api/auth', authRouter);
+app.use('/api/user', userRouter);
 
 
 app.use((err, req, res, next) => {
